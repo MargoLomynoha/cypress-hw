@@ -7,6 +7,6 @@ module.exports = defineConfig({
     },
     viewportWidth: 1440,
     viewportHeight: 850,
-    baseUrl: 'https://example.cypress.io/',
+    baseUrl: 'https://qauto.forstudy.space/',
   },
 });
