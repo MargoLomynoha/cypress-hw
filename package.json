@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:qauto": "npx cypress run --spec cypress/e2e/lesson20-21/garageTests.cy.js --config-file qauto.config.js",
-    "cy:qauto2": "npx cypress run --spec cypress/e2e/lesson20-21/garageTests.cy.js --config-file qauto2.config.js"
+    "cy:qauto2": "npx cypress run --spec cypress/e2e/lesson20-21/garageTests.cy.js --config-file qauto2.config.js",
+    "cy:qautoApi": "npx cypress run --spec cypress/e2e/api/garageAPI.test.cy.js --config-file qauto.config.js"
   },
   "repository": {
     "type": "git",

@@ -44,6 +44,11 @@ export class GaragePage extends BasePage {
       '[class="btn btn-white btn-sidebar sidebar_btn"][href^="/panel/garage"]'
     );
   }
+  get expensesNavButton() {
+    return this.getElement(
+      '[class="btn btn-white btn-sidebar sidebar_btn"][href^="/panel/expenses"]'
+    );
+  }
   verifyGarageEmpty() {
     this.emptyGaragePageMessage.should('be.visible');
   }
