@@ -30,7 +30,6 @@ describe('Garage smoke test  ', () => {
 
     garagePage.clickOnButton(garagePage.addExpenseButton);
     let expense = new ExpensesPage();
-    // expense.getElement('#addExpenseDate').clear().type('20.12.2025');
     expense.typeValueIntoInput(expense.mileageInput, '30');
     expense.typeValueIntoInput(expense.littersNumberInput, '10');
     expense.typeValueIntoInput(expense.totalCostInput, '15');

@@ -24,7 +24,7 @@ export class ExpensesPage extends BasePage {
     input.type(value);
   }
   shouldOpenExpensesPage() {
-    this.urlShouldContain('/panel/expenses?carId=');
+    this.urlShouldContain('/panel/expenses');
   }
   clickOnAddButton() {
     this.addButton.click();

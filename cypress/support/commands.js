@@ -27,14 +27,33 @@
 Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
   if (options && options.sensitive) {
     // turn off original log
-    options.log = false
+    options.log = false;
     // create our own log with masked message
     Cypress.log({
       $el: element,
       name: 'type',
       message: '*'.repeat(text.length),
-    })
+    });
   }
 
-  return originalFn(element, text, options)
-})
+  return originalFn(element, text, options);
+});
+
+export function registerCommands() {
+  Cypress.Commands.add('createExpense', (carId, overrides = {}) => {
+    const body = {
+      carId,
+      reportedAt: '2025-12-22',
+      mileage: 111,
+      liters: 15,
+      totalCost: 20,
+      forceMileage: false,
+      ...overrides,
+    };
+    return cy.request({
+      method: 'POST',
+      url: 'api/expenses/',
+      body,
+    });
+  });
+}
