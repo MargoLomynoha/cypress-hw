@@ -43,7 +43,7 @@ export function registerCommands() {
   Cypress.Commands.add('createExpense', (carId, overrides = {}) => {
     const body = {
       carId,
-      reportedAt: '2025-12-22',
+      reportedAt: new Date().toLocaleDateString('en-CA'),
       mileage: 111,
       liters: 15,
       totalCost: 20,
