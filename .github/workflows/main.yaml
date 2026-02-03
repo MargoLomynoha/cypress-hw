@@ -11,20 +11,15 @@ jobs:
     runs-on: ubuntu-24.04
 
     container:
-      image: cypress/included:cypress-15.8.2-node-24.13.0-chrome-143.0.7499.192-1-ff-147.0-edge-143.0.3650.139-1
+      image: cypress/browsers:latest
+      options: --user 1001
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache Cypress binary
-        uses: actions/cache@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v7
         with:
-          path: /root/.cache/Cypress
-          key: cypress-${{ runner.os }}-15.8.1
-
-      - name: Install deps
-        run: npm install
-
-      - name: Run Cypress (Chrome)
-        run: npx cypress run --config-file qauto.config.js --browser firefox
+          config-file: qauto.config.js
+          browser: chrome
