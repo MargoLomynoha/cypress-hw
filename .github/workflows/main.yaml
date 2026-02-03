@@ -1,0 +1,25 @@
+name: Cypress in Docker
+
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-24.04
+
+    container:
+      image: cypress/browsers:latest
+      options: --user 1001
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v7
+        with:
+          config-file: qauto.config.js
+          browser: chrome
